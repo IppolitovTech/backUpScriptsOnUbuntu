@@ -1,0 +1,10 @@
+Show current cron rules:
+crontab -l
+
+Edit cron rules:
+crontab -e
+
+Execution time cron jobs:
+0 1 * * * /var/backup/scripts/dailyScripts/script.sh
+0 0 * * 0 /var/backup/scripts/weeklyScripts/script.sh
+0 0 1 * * /var/backup/scripts/monthlyScripts/script.sh
