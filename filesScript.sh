@@ -8,7 +8,7 @@ KeepTime=4 # Determine period of keeping backups
 
 echo "$timestamp — Start" >> $backupLog # Write down the start date of the backups
 if [ -d $backupTO ]; then # Checking directory exist for backups
-find $backupTO -maxdepth 1 -name \*.tar.gz -mtime +${KeepTime} -exec rm -f {} \; # Removing files older than Keep time
+find $backupTO -maxdepth 1 -name \*.tar.gz -mtime -${KeepTime} -exec rm -f {} \; # Removing files older than Keep time
    for i in $backupFS # Beginning to do backup copy directories from  из backupFS
    do
       j=`expr ${i//\//-}` # Removing extra characters “/”
